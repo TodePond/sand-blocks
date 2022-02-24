@@ -88,31 +88,22 @@ Blockly.Blocks["element_dropdown"] = {
 Blockly.Blocks["sand_behavior_base"] = {
   init: function () {
     this.jsonInit({
-      message0: "Sand Behavior %1 %2 %3",
-      tooltip: "Behavior for the sand",
-      helpUrl: "",
-      args0: [
-        {
-          type: "field_colour",
-          name: "Color",
-          colour: "#fa7",
-        },
-        {
-          type: "input_value",
-          name: "Color2",
-          align: "CENTRE",
-        },
+      message0: "Behavior",
+      message1: "%1",
+      args1: [
         {
           type: "input_statement",
           name: "body",
           align: "CENTRE",
         },
       ],
-      inputsInline: true,
+      inputsInline: false,
+      tooltip: "Behavior for the element",
+      helpUrl: "",
     });
     this.setDeletable(false);
     this.setMovable(true);
-    this.setStyle("loop_blocks");
+    //this.setStyle("loop_blocks");
   },
 };
 
@@ -197,6 +188,25 @@ Blockly.Blocks["swap_cells"] = {
       colour: 270,
       tooltip: "",
       helpUrl: "",
+    });
+  },
+};
+
+//====================================
+
+Blockly.Blocks["element_literal"] = {
+  init: function () {
+    this.jsonInit({
+      type: "element_literal",
+      output: "Number",
+      message0: "%1",
+      args0: [
+        {
+          type: "field_dropdown",
+          name: "ELEMENT",
+          options: elements.map((name, i) => [name, i.toString()]),
+        }
+      ],
     });
   },
 };

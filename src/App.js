@@ -111,7 +111,17 @@ const App = () => {
           }}
           initialXml={window.localStorage.getItem("code") || starterXMLs[1]}
         >
-          <Category name="APIs">
+
+          <Category name="Numbers">
+            <Block type="math_number" gap="32">
+              <Field name="NUM">0</Field>
+            </Block>
+            <Block type="element_literal">
+              <Field name="ELEMENT">0</Field>
+            </Block>
+          </Category>
+
+          {/*<Category name="APIs">
             <Block type="get_cell" />
             <Block type="set_cell" />
             <Block type="swap_cells" />
@@ -122,7 +132,7 @@ const App = () => {
           </Category>
           <Category name="Blocks">
             <Block type="controls_if" />
-            {/* <Block type="controls_ifelse" /> */}
+            { //<Block type="controls_ifelse" /> }
             <Block type="logic_compare" />
             <Block type="logic_operation" />
             <Block type="math_number" gap="32">
@@ -249,7 +259,7 @@ const App = () => {
             name="Variables"
             categorystyle="variable_category"
             custom="VARIABLE"
-          ></Category>
+            ></Category>*/}
         </BlocklyComponent>
       </header>
     </div>
